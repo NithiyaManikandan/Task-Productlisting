@@ -1,0 +1,20 @@
+<div class="row m-2">
+  <div class="d-flex justify-content-md-center mb-3 col-md-3" *ngFor="let product of productList">
+    <div class="card" style="width:18rem;">
+      <img class="card-img-top" src="{{product.images}}">
+      <div class="card-body">
+        <div>{{ product.title }}</div>
+        <div>Rating: {{ product.rating }}</div>
+        <div>Brand: {{ product.brand }}</div>
+        <div>Price: {{ product.price }}</div>
+        <div>ID : {{product.id}} </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <app-toast *ngIf="!isLoading"></app-toast>
+  <button type="button" *ngIf="checkLoadOption && !isLoading" (click)="loadUser()" class="btn btn-primary">Load
+    More</button>
+  <app-loader></app-loader>
+</div>
